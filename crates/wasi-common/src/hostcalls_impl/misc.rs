@@ -191,6 +191,20 @@ pub(crate) fn sched_yield(_wasi_ctx: &WasiCtx, _memory: &mut [u8]) -> Result<()>
     Ok(())
 }
 
+// torch2424
+pub(crate) fn draw(
+    wasi_ctx: &WasiCtx,
+    memory: &mut [u8],
+    frame_buf: wasi32::uintptr_t,
+    buf_length: wasi32::size_t,
+) -> Result<()> {
+    println!("Draw called!");
+    println!("Draw frame_buf {:?}", frame_buf);
+    println!("Draw buf_length {:?}", buf_length);
+
+    Ok(())
+}
+
 pub(crate) fn poll_oneoff(
     wasi_ctx: &WasiCtx,
     memory: &mut [u8],
